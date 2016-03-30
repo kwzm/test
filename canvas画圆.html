@@ -68,11 +68,15 @@ function pieChart(config) {
                     endAngle = endAngle + dataArr[i].percent * Math.PI * 2; //结束弧度  
                     ctx.fillStyle = dataArr[i].color;
                     ctx.beginPath();
-                    ctx.moveTo(ox, oy); //移动到到圆心  
+                    //ctx.moveTo(ox, oy); //移动到到圆心  
                     ctx.arc(ox, oy, radius, startAngle, endAngle, false);
-                    ctx.closePath();
+                    //ctx.closePath();
                     ctx.fill();
                     startAngle = endAngle; //设置起始弧度 
+                    //ctx.fillStyle="rgb(165,211,234)";
+                    //ctx.beginPath();
+                    //ctx.arc(100,75,50,0,2*Math.PI);
+                    //ctx.fill();
                 }
             }
 

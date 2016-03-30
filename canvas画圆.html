@@ -63,21 +63,29 @@ function pieChart(config) {
                 var ox = radius, oy = radius; //圆心  
                 var startAngle = 2 * Math.PI * 270 / 360; //起始弧度  
                 var endAngle = 2 * Math.PI * 270 / 360; //结束弧度  
-                for (var i = 0; i < dataArr.length; i++) {
+                //for (var i = 0; i < dataArr.length; i++) {
                     //绘制饼图  
-                    endAngle = endAngle + dataArr[i].percent * Math.PI * 2; //结束弧度  
-                    ctx.fillStyle = dataArr[i].color;
+//endAngle = endAngle + dataArr[i].percent * Math.PI * 2; //结束弧度  
+                   // ctx.fillStyle = dataArr[i].color;
+                    //ctx.beginPath();
+                    //ctx.moveTo(ox, oy); //移动到到圆心  
+                   // ctx.arc(ox, oy, radius, startAngle, endAngle, false);
+                    //ctx.closePath();
+                    //ctx.fill();
+                    //startAngle = endAngle; //设置起始弧度 
+                    //ctx.fillStyle="rgb(165,211,234)";
+                    //ctx.beginPath();
+                    //ctx.arc(100,75,50,0,2*Math.PI);
+                    //ctx.fill();
+                //}
+                endAngle = endAngle + dataArr[0].percent * Math.PI * 2; //结束弧度
+                    ctx.fillStyle = dataArr[0].color;
                     ctx.beginPath();
                     //ctx.moveTo(ox, oy); //移动到到圆心  
                     ctx.arc(ox, oy, radius, startAngle, endAngle, false);
                     //ctx.closePath();
                     ctx.fill();
-                    startAngle = endAngle; //设置起始弧度 
-                    //ctx.fillStyle="rgb(165,211,234)";
-                    //ctx.beginPath();
-                    //ctx.arc(100,75,50,0,2*Math.PI);
-                    //ctx.fill();
-                }
+                    //startAngle = endAngle; //设置起始弧度 
             }
 
 

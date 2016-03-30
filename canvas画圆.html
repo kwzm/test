@@ -7,6 +7,10 @@
 
 <div class="chart"></div>
 
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script>
 
@@ -14,7 +18,7 @@ function pieChart(config) {
             if (this === window.wxc) return new window.wxc.pieChart(config);
             config = $.extend(true, {
                 element: null,//插件对应jquery对象,canvas容器,必填
-                id: "canvas_" + new Date().getTime(),//canvas的id
+                id: "myCanvas",//canvas的id
                 dataArr: [],//图表的数据集,必填
                 //--Event--
                 animate: $.noop//
@@ -40,8 +44,8 @@ function pieChart(config) {
 
             //将绘制好的图表添加到容器中
             function creatDom() {
-                if (document.getElementById(canvasId)) { MainPage.xcConfirm.error("canvas的id重复!"); return; }
-                element.append(creatCanvas(canvasId, 300, cvsH));
+                //if (document.getElementById(canvasId)) { MainPage.xcConfirm.error("canvas的id重复!"); return; }
+                //element.append(creatCanvas(canvasId, 300, cvsH));
                 var canvas = document.getElementById(canvasId);
                 drawPieChart(canvas);
             }
